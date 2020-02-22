@@ -27,7 +27,7 @@ class DrawText(QWidget):
         self.text = 'Hello World'
 
     def paintEvent(self, event):
-        painter = QPainter(self)
+        painter = QPainter()
         painter.begin(self)
 
         painter.setPen(QColor(166, 178, 23))
