@@ -26,9 +26,9 @@ class QDialogDemo(QMainWindow):
         self.button = QPushButton(self)
         self.button.setText('弹出对话框')
         self.button.move(50, 50)
-        self.button.clicked.connect(self.show_dialog)
+        self.button.clicked.connect(self.showDialog)
 
-    def show_dialog(self):
+    def showDialog(self):
         dialog = QDialog()
         button = QPushButton('确定', dialog)
         button.clicked.connect(dialog.close)

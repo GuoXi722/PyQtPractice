@@ -17,9 +17,9 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 
-class QMessageBox(QWidget):
+class QMessageBoxDemo(QWidget):
     def __init__(self):
-        super(QMessageBox, self).__init__()
+        super(QMessageBoxDemo, self).__init__()
         self.init_ui()
 
     def init_ui(self):
@@ -29,23 +29,23 @@ class QMessageBox(QWidget):
         layout = QVBoxLayout()
         self.button1 = QPushButton(self)
         self.button1.setText('显示关于对话框')
-        self.button1.clicked.connect(self.show_dialog)
+        self.button1.clicked.connect(self.showDialog)
 
         self.button2 = QPushButton(self)
         self.button2.setText('显示错误对话框')
-        self.button2.clicked.connect(self.show_dialog)
+        self.button2.clicked.connect(self.showDialog)
 
         self.button3 = QPushButton(self)
         self.button3.setText('显示警告对话框')
-        self.button3.clicked.connect(self.show_dialog)
+        self.button3.clicked.connect(self.showDialog)
 
         self.button4 = QPushButton(self)
         self.button4.setText('显示提问对话框')
-        self.button4.clicked.connect(self.show_dialog)
+        self.button4.clicked.connect(self.showDialog)
 
         self.button5 = QPushButton(self)
         self.button5.setText('显示消息对话框')
-        self.button5.clicked.connect(self.show_dialog)
+        self.button5.clicked.connect(self.showDialog)
 
         layout.addWidget(self.button1)
         layout.addWidget(self.button2)
@@ -54,7 +54,7 @@ class QMessageBox(QWidget):
         layout.addWidget(self.button5)
         self.setLayout(layout)
 
-    def show_dialog(self):
+    def showDialog(self):
         text = self.sender().text()
 
         if text == '显示关于对话框':
@@ -72,6 +72,6 @@ class QMessageBox(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = QMessageBox()
+    window = QMessageBoxDemo()
     window.show()
     sys.exit(app.exec_())

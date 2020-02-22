@@ -4,9 +4,9 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 
-class QColorDialog(QWidget):
+class QColorDialogDemo(QWidget):
     def __init__(self):
-        super(QColorDialog, self).__init__()
+        super(QColorDialogDemo, self).__init__()
         self.init_ui()
 
     def init_ui(self):
@@ -14,16 +14,16 @@ class QColorDialog(QWidget):
 
         layout = QVBoxLayout()
 
-        self.color_button = QPushButton('选择颜色')
-        self.color_button.clicked.connect(self.get_color)
+        self.colorButton = QPushButton('选择颜色')
+        self.colorButton.clicked.connect(self.getColor)
         self.label = QLabel('Hello World')
-        layout.addWidget(self.color_button)
+        layout.addWidget(self.colorButton)
         layout.addWidget(self.label)
 
         self.setLayout(layout)
 
-    def get_color(self):
-        color= QColorDialog.getColor()
+    def getColor(self):
+        color = QColorDialog.getColor()
         p = QPalette()
         p.setColor(QPalette.WindowText, color)
         self.label.setPalette(p)
@@ -31,6 +31,6 @@ class QColorDialog(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = QColorDialog()
+    window = QColorDialogDemo()
     window.show()
     sys.exit(app.exec_())
